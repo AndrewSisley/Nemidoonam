@@ -1,0 +1,10 @@
+{
+    "files.exclude": {
+        "Web/Cargo.lock": true,
+        "Web/dist": true,
+        "Web/node_modules": true,
+        "Web/package-lock.json": true,
+        "Web/pkg": true,
+        "Web/target": true
+    }
+}

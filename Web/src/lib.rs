@@ -1,12 +1,10 @@
-
 extern crate cfg_if;
 extern crate wasm_bindgen;
-extern crate serde;
+extern crate wacm;
 
 use cfg_if::cfg_if;
 use wasm_bindgen::prelude::*;
-use std::string::String;
-use serde::{Serialize};
+use wacm::Component;
 
 cfg_if! {
     // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
@@ -18,14 +16,9 @@ cfg_if! {
     }
 }
 
-#[derive(Serialize)]
-pub struct App {
-    pub html: String,
-}
-
 #[wasm_bindgen]
 pub fn start_app() -> JsValue {
-    let r = App {
+    let r = Component {
       html: format!("<div>placeholder text</div>")
     };
 

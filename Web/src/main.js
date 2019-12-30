@@ -5,3 +5,4 @@ import { start_app } from 'nemidoonam';
     document.getElementById("component-styles").innerHTML = app.css;
     document.getElementById("container").innerHTML = app.html;
 })();
+

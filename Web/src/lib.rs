@@ -6,6 +6,7 @@ use cfg_if::cfg_if;
 use wasm_bindgen::prelude::*;
 use wacm::Component;
 
+mod repos;
 mod localization;
 
 cfg_if! {

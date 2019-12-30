@@ -6,6 +6,8 @@ use cfg_if::cfg_if;
 use wasm_bindgen::prelude::*;
 use wacm::Component;
 
+mod localization;
+
 cfg_if! {
     // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
     // allocator.

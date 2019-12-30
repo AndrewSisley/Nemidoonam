@@ -6,6 +6,10 @@ use cfg_if::cfg_if;
 use wasm_bindgen::prelude::*;
 use wacm::Component;
 
+mod core;
+mod repos;
+mod localization;
+
 cfg_if! {
     // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global
     // allocator.
@@ -18,9 +22,12 @@ cfg_if! {
 
 #[wasm_bindgen]
 pub fn start_app() -> JsValue {
-    let r = Component {
-      html: format!("<div>placeholder text</div>")
+    let header = core::header::get_header();
+
+    let app_model = Component {
+        css: format!("{}", header.css),
+        html: format!("{}", header.html)
     };
 
-    return JsValue::from_serde(&r).unwrap();
+    return JsValue::from_serde(&app_model).unwrap();
 }

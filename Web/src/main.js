@@ -1,4 +1,4 @@
-import { start_app, handle_language_selector_click, set_language } from 'nemidoonam';
+import { start_app, handle_language_selector_click, set_language, set_page } from 'nemidoonam';
 
 (() => {
     const app = start_app();
@@ -15,6 +15,11 @@ window.nemidoonam = {
     },
     set_language: (id) => {
         set_language(id);
+        // this should only set the relevant elements, and be done a little less explicitly perhaps
+        document.getElementById("container").innerHTML = start_app().html;
+    },
+    set_page: (id) => {
+        set_page(id);
         // this should only set the relevant elements, and be done a little less explicitly perhaps
         document.getElementById("container").innerHTML = start_app().html;
     },

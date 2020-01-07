@@ -1,2 +1,2 @@
-pub mod current_language;
+pub mod display_language;
 pub mod current_page;

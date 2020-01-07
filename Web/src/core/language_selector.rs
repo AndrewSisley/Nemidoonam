@@ -4,7 +4,7 @@ extern crate wasm_bindgen;
 use wasm_bindgen::prelude::*;
 use std::sync::atomic::{AtomicBool, Ordering};
 use wacm::Component;
-use crate::repos::current_language;
+use crate::repos::display_language;
 
 static DISPLAY_LIST_ITEMS: AtomicBool = AtomicBool::new(false);
 
@@ -44,7 +44,7 @@ pub fn get_language_selector() -> Component {
         "".to_string()
     };
 
-    let current_language_id = current_language::get();
+    let display_language_id = display_language::get();
 
     return Component {
         css: format!(
@@ -65,11 +65,11 @@ pub fn get_language_selector() -> Component {
         html: format!(
             "<div class='language-selector' onclick='window.nemidoonam.handle_language_selector_click()'>
             <div>
-            {current_language}
+            {display_language}
             {list_item_elements}
             </div>
             </div>",
-            current_language = AVAILABLE_LANGUAGES.iter().find(|&l| l.id == current_language_id).unwrap().display_text,
+            display_language = AVAILABLE_LANGUAGES.iter().find(|&l| l.id == display_language_id).unwrap().display_text,
             list_item_elements = list_item_elements
         ),
     }
@@ -85,5 +85,5 @@ pub fn handle_language_selector_click() {
 
 #[wasm_bindgen]
 pub fn set_language(id: i32) {
-    current_language::set(id);
+    display_language::set(id);
 }

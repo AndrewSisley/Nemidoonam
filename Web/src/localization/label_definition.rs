@@ -1,5 +1,5 @@
 use super::label::Label;
-use crate::repos::current_language;
+use crate::repos::display_language;
 
 pub struct LabelDefinition<'a> {
     pub id: i32,
@@ -10,7 +10,7 @@ pub struct LabelDefinition<'a> {
 
 impl<'a> LabelDefinition<'a> {
     pub fn get_display_text(&self) -> &'a str {
-        return match current_language::get() {
+        return match display_language::get() {
             1 => self.english.display_text,
             2 => self.farsi.display_text,
             3 => self.swedish.display_text,

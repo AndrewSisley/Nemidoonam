@@ -4,27 +4,14 @@ extern crate wasm_bindgen;
 use wasm_bindgen::prelude::*;
 use std::sync::atomic::{AtomicBool, Ordering};
 use wacm::Component;
-use crate::repos::display_language;
+use crate::repos::{ display_language, available_languages };
 use crate::localization::{ language::Language };
 
 static DISPLAY_LIST_ITEMS: AtomicBool = AtomicBool::new(false);
 
-static AVAILABLE_LANGUAGES: [Language; 3] = [
-    Language {
-        id: 1,
-        display_text: "English",
-    },
-    Language {
-        id: 2,
-        display_text: "Farsi",
-    },
-    Language {
-        id: 3,
-        display_text: "Svenska",
-    },
-];
-
 pub fn get_language_selector() -> Component {
+    let available_languages = available_languages::get();
+
     let list_item_elements = if DISPLAY_LIST_ITEMS.load(Ordering::Relaxed) {
         format!(
             "<ul>
@@ -32,9 +19,9 @@ pub fn get_language_selector() -> Component {
             <li onclick='window.nemidoonam.set_language(2)'>{fa}</li>
             <li onclick='window.nemidoonam.set_language(3)'>{sw}</li>
             </ul>",
-            en = AVAILABLE_LANGUAGES[0].display_text,
-            fa = AVAILABLE_LANGUAGES[1].display_text,
-            sw = AVAILABLE_LANGUAGES[2].display_text,
+            en = available_languages[0].display_text,
+            fa = available_languages[1].display_text,
+            sw = available_languages[2].display_text,
         )
     } else {
         "".to_string()
@@ -65,7 +52,7 @@ pub fn get_language_selector() -> Component {
             {list_item_elements}
             </div>
             </div>",
-            display_language = AVAILABLE_LANGUAGES.iter().find(|&l| l.id == display_language_id).unwrap().display_text,
+            display_language = available_languages.iter().find(|&l| l.id == display_language_id).unwrap().display_text,
             list_item_elements = list_item_elements
         ),
     }

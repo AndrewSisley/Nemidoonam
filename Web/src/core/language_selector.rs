@@ -5,7 +5,7 @@ use wasm_bindgen::prelude::*;
 use std::sync::atomic::{AtomicBool, Ordering};
 use wacm::Component;
 use crate::repos::{ display_language, available_languages };
-use crate::localization::{ language::Language };
+use crate::components::dropdown;
 
 static DISPLAY_LIST_ITEMS: AtomicBool = AtomicBool::new(false);
 
@@ -13,48 +13,30 @@ pub fn get_language_selector() -> Component {
     let available_languages = available_languages::get();
     let display_language_id = display_language::get();
 
-    let list_item_elements = if DISPLAY_LIST_ITEMS.load(Ordering::Relaxed) {
-        format!(
-            "<ul>
-            <li onclick='window.nemidoonam.set_language(1)'>{en}</li>
-            <li onclick='window.nemidoonam.set_language(2)'>{fa}</li>
-            <li onclick='window.nemidoonam.set_language(3)'>{sw}</li>
-            </ul>",
-            en = available_languages[0].get_display_text(),
-            fa = available_languages[1].get_display_text(),
-            sw = available_languages[2].get_display_text(),
-        )
-    } else {
-        "".to_string()
+    let dropdown_items = dropdown::DropdownItemCollection {
+        handle_on_click_method_name: "window.nemidoonam.set_language",
+        items: &[
+            dropdown::DropdownItem {
+                id: available_languages[0].id,
+                display_text: available_languages[0].get_display_text(),
+            },
+            dropdown::DropdownItem {
+                id: available_languages[1].id,
+                display_text: available_languages[1].get_display_text(),
+            },
+            dropdown::DropdownItem {
+                id: available_languages[2].id,
+                display_text: available_languages[2].get_display_text(),
+            },
+        ],
     };
 
-    return Component {
-        css: format!(
-            ".language-selector {{
-            display: flex;
-            justify-content: flex-end;
-            }}
-            .language-selector ul {{
-            list-style:none;
-            position: absolute;
-            z-index: 10;
-            padding-inline-start: 0px;
-            }}
-            .language-selector div {{
-            width: 80px;
-            }}"
-        ),
-        html: format!(
-            "<div class='language-selector' onclick='window.nemidoonam.handle_language_selector_click()'>
-            <div>
-            {display_language}
-            {list_item_elements}
-            </div>
-            </div>",
-            display_language = available_languages.iter().find(|&l| l.id == display_language_id).unwrap().get_display_text(),
-            list_item_elements = list_item_elements
-        ),
-    }
+    return dropdown::get_component(
+        available_languages.iter().find(|&l| l.id == display_language_id).unwrap().get_display_text(),
+        "window.nemidoonam.handle_language_selector_click()",
+        DISPLAY_LIST_ITEMS.load(Ordering::Relaxed),
+        &dropdown_items
+    );
 }
 
 #[wasm_bindgen]

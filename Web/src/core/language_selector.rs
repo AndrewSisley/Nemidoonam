@@ -5,6 +5,7 @@ use wasm_bindgen::prelude::*;
 use std::sync::atomic::{AtomicBool, Ordering};
 use wacm::Component;
 use crate::repos::display_language;
+use crate::localization::{ language::Language };
 
 static DISPLAY_LIST_ITEMS: AtomicBool = AtomicBool::new(false);
 
@@ -22,11 +23,6 @@ static AVAILABLE_LANGUAGES: [Language; 3] = [
         display_text: "Svenska",
     },
 ];
-
-struct Language {
-    id: i32,
-    display_text: &'static str,
-}
 
 pub fn get_language_selector() -> Component {
     let list_item_elements = if DISPLAY_LIST_ITEMS.load(Ordering::Relaxed) {

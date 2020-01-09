@@ -11,6 +11,7 @@ static DISPLAY_LIST_ITEMS: AtomicBool = AtomicBool::new(false);
 
 pub fn get_language_selector() -> Component {
     let available_languages = available_languages::get();
+    let display_language_id = display_language::get();
 
     let list_item_elements = if DISPLAY_LIST_ITEMS.load(Ordering::Relaxed) {
         format!(
@@ -26,8 +27,6 @@ pub fn get_language_selector() -> Component {
     } else {
         "".to_string()
     };
-
-    let display_language_id = display_language::get();
 
     return Component {
         css: format!(

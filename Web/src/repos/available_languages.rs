@@ -4,7 +4,9 @@ use crate::localization::{
     language:: Language
 };
 
-pub fn get() -> [Language; 3] {
+pub const LANGUAGE_COUNT: usize = 3;
+
+pub fn get() -> [Language; LANGUAGE_COUNT] {
     return [
         Language {
             id: 1,

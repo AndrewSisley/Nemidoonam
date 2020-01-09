@@ -13,22 +13,20 @@ pub fn get_language_selector() -> Component {
     let available_languages = available_languages::get();
     let display_language_id = display_language::get();
 
+    let mut items: [dropdown::DropdownItem; available_languages::LANGUAGE_COUNT] = Default::default();
+
+    let mut i: usize = 0;
+    for available_language in &available_languages {
+        items[i] = dropdown::DropdownItem {
+            id: available_language.id,
+            display_text: available_language.get_display_text(),
+        };
+        i = i + 1;
+    }
+
     let dropdown_items = dropdown::DropdownItemCollection {
         handle_on_click_method_name: "window.nemidoonam.set_language",
-        items: &[
-            dropdown::DropdownItem {
-                id: available_languages[0].id,
-                display_text: available_languages[0].get_display_text(),
-            },
-            dropdown::DropdownItem {
-                id: available_languages[1].id,
-                display_text: available_languages[1].get_display_text(),
-            },
-            dropdown::DropdownItem {
-                id: available_languages[2].id,
-                display_text: available_languages[2].get_display_text(),
-            },
-        ],
+        items: &items,
     };
 
     return dropdown::get_component(

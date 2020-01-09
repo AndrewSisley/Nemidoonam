@@ -1,5 +1,6 @@
 use wacm::Component;
 
+#[derive(Default)]
 pub struct DropdownItem<'a> {
     pub id: i32,
     pub display_text: &'a str,

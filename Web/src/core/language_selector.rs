@@ -20,9 +20,9 @@ pub fn get_language_selector() -> Component {
             <li onclick='window.nemidoonam.set_language(2)'>{fa}</li>
             <li onclick='window.nemidoonam.set_language(3)'>{sw}</li>
             </ul>",
-            en = available_languages[0].display_text,
-            fa = available_languages[1].display_text,
-            sw = available_languages[2].display_text,
+            en = available_languages[0].get_display_text(),
+            fa = available_languages[1].get_display_text(),
+            sw = available_languages[2].get_display_text(),
         )
     } else {
         "".to_string()
@@ -51,7 +51,7 @@ pub fn get_language_selector() -> Component {
             {list_item_elements}
             </div>
             </div>",
-            display_language = available_languages.iter().find(|&l| l.id == display_language_id).unwrap().display_text,
+            display_language = available_languages.iter().find(|&l| l.id == display_language_id).unwrap().get_display_text(),
             list_item_elements = list_item_elements
         ),
     }

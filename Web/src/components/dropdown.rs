@@ -32,11 +32,7 @@ pub fn get_component(display_text: &str, handle_on_click: &str, display_list_ite
 
     return Component {
         css: format!(
-            ".dropdown {{
-            display: flex;
-            justify-content: flex-end;
-            }}
-            .dropdown ul {{
+            ".dropdown ul {{
             list-style:none;
             position: absolute;
             z-index: 10;

@@ -27,6 +27,10 @@ pub fn get_header() -> Component {
             "header {{
             padding: 0 0 0 100px;
             }}
+            .menu-right {{
+            display: flex;
+            justify-content: flex-end;
+            }}
             {display_language_selector}
             {nav_bar}",
             display_language_selector = display_language_selector.css,
@@ -34,7 +38,9 @@ pub fn get_header() -> Component {
         ),
         html: format!(
             "<header>
+            <div class='menu-right'>
             {display_language_selector}
+            </div>
             <h1>{banner}</h1>
             {nav_bar}
             </header>",

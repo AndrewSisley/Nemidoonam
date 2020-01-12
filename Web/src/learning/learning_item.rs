@@ -1,6 +1,7 @@
 use crate::localization::{ label_definition::LabelDefinition };
 
 pub struct LearningItem {
+    pub target_languages: Vec<i32>,
     pub label_definition: LabelDefinition<'static>,
 }
 

@@ -1,7 +1,9 @@
 import {
     start_app,
     handle_display_language_selector_click,
+    handle_target_language_selector_click,
     set_display_language,
+    set_target_language,
     set_page
 } from 'nemidoonam';
 
@@ -18,8 +20,18 @@ window.nemidoonam = {
         // this should only set the relevant elements, and be done a little less explicitly perhaps
         document.getElementById("container").innerHTML = start_app().html;
     },
+    handle_target_language_selector_click: () => {
+        handle_target_language_selector_click();
+        // this should only set the relevant elements, and be done a little less explicitly perhaps
+        document.getElementById("container").innerHTML = start_app().html;
+    },
     set_display_language: (id) => {
         set_display_language(id);
+        // this should only set the relevant elements, and be done a little less explicitly perhaps
+        document.getElementById("container").innerHTML = start_app().html;
+    },
+    set_target_language: (id) => {
+        set_target_language(id);
         // this should only set the relevant elements, and be done a little less explicitly perhaps
         document.getElementById("container").innerHTML = start_app().html;
     },

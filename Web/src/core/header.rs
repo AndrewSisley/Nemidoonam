@@ -33,6 +33,9 @@ pub fn get_header() -> Component {
             display: flex;
             justify-content: flex-end;
             }}
+            .language-select-spacer {{
+            padding: 0 20px 0 0;
+            }}
             {display_language_selector}
             {target_language_selector}
             {nav_bar}",
@@ -44,6 +47,7 @@ pub fn get_header() -> Component {
             "<header>
             <div class='menu-right'>
             {display_language_selector}
+            <span class='language-select-spacer'>=></span>
             {target_language_selector}
             </div>
             <h1>{banner}</h1>

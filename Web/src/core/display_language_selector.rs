@@ -25,20 +25,20 @@ pub fn get_language_selector() -> Component {
     }
 
     let dropdown_items = dropdown::DropdownItemCollection {
-        handle_on_click_method_name: "window.nemidoonam.set_language",
+        handle_on_click_method_name: "window.nemidoonam.set_display_language",
         items: &items,
     };
 
     return dropdown::get_component(
         available_languages.iter().find(|&l| l.id == display_language_id).unwrap().get_display_text(),
-        "window.nemidoonam.handle_language_selector_click()",
+        "window.nemidoonam.handle_display_language_selector_click()",
         DISPLAY_LIST_ITEMS.load(Ordering::Relaxed),
         &dropdown_items
     );
 }
 
 #[wasm_bindgen]
-pub fn handle_language_selector_click() {
+pub fn handle_display_language_selector_click() {
     let was_true = DISPLAY_LIST_ITEMS.compare_and_swap(true, false, Ordering::Relaxed);
     if !was_true {
         DISPLAY_LIST_ITEMS.compare_and_swap(false, true, Ordering::Relaxed);
@@ -46,6 +46,6 @@ pub fn handle_language_selector_click() {
 }
 
 #[wasm_bindgen]
-pub fn set_language(id: i32) {
+pub fn set_display_language(id: i32) {
     display_language::set(id);
 }

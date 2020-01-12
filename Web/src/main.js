@@ -1,4 +1,9 @@
-import { start_app, handle_display_language_selector_click, set_display_language, set_page } from 'nemidoonam';
+import {
+    start_app,
+    handle_display_language_selector_click,
+    set_display_language,
+    set_page
+} from 'nemidoonam';
 
 (() => {
     const app = start_app();

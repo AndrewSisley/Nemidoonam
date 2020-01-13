@@ -10,6 +10,7 @@ mod core;
 mod repos;
 mod localization;
 mod pages;
+mod components;
 
 cfg_if! {
     // When the `wee_alloc` feature is enabled, use `wee_alloc` as the global

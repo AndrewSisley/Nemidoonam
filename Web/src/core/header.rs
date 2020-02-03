@@ -7,7 +7,6 @@ use super::target_language_selector;
 use crate::localization::{ label::Label, label_definition::LabelDefinition };
 
 static TITLE: LabelDefinition = LabelDefinition {
-    id: 1,
     english: Label {
         display_text: "Welcome",
     },

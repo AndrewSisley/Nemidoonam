@@ -11,7 +11,6 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
         Language {
             id: 1,
             label_definition: LabelDefinition {
-                id: 3,
                 english: Label {
                     display_text: "English",
                 },
@@ -26,7 +25,6 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
         Language {
             id: 2,
             label_definition: LabelDefinition {
-                id: 4,
                 english: Label {
                     display_text: "Farsi",
                 },
@@ -41,7 +39,6 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
         Language {
             id: 3,
             label_definition: LabelDefinition {
-                id: 4,
                 english: Label {
                     display_text: "Swedish",
                 },

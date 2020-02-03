@@ -2,7 +2,6 @@ use super::label::Label;
 use crate::repos::display_language;
 
 pub struct LabelDefinition<'a> {
-    pub id: i32,
     pub english: Label<'a>,
     pub farsi: Label<'a>,
     pub swedish: Label<'a>,

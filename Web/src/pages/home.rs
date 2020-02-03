@@ -2,7 +2,6 @@ use wacm::Component;
 use crate::localization::{ label::Label, label_definition::LabelDefinition };
 
 pub static TITLE: LabelDefinition = LabelDefinition {
-    id: 2,
     english: Label {
         display_text: "Home",
     },

@@ -9,7 +9,7 @@ pub static TITLE: LabelDefinition = LabelDefinition {
         display_text: "Alphabet",
     },
     farsi: Label {
-        display_text: "Alaf be",
+        display_text: "الفبا",
     },
     swedish: Label {
         display_text: "Alfabet",

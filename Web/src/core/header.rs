@@ -13,7 +13,7 @@ static TITLE: LabelDefinition = LabelDefinition {
         display_text: "Welcome",
     },
     farsi: Label {
-        display_text: "Khosh amadid",
+        display_text: "خوش امدی",
     },
     swedish: Label {
         display_text: "Välkommen",

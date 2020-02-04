@@ -6,7 +6,7 @@ pub static TITLE: LabelDefinition = LabelDefinition {
         display_text: "Home",
     },
     farsi: Label {
-        display_text: "Khane",
+        display_text: "خانه",
     },
     swedish: Label {
         display_text: "Hem",

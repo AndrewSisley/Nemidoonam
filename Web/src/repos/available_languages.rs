@@ -21,7 +21,7 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
                     display_text: "English",
                 },
                 farsi: Label {
-                    display_text: "Englisi",
+                    display_text: "انگلیسی",
                 },
                 swedish: Label {
                     display_text: "Engelska",
@@ -35,7 +35,7 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
                     display_text: "Farsi",
                 },
                 farsi: Label {
-                    display_text: "Farsi",
+                    display_text: "فارسی",
                 },
                 swedish: Label {
                     display_text: "Persiska",
@@ -49,10 +49,10 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
                     display_text: "Swedish",
                 },
                 farsi: Label {
-                    display_text: "Sweudi",
+                    display_text: "سوئدی",
                 },
                 swedish: Label {
-                    display_text: "Svenska",
+                    display_text: "Svenska   سوئدی",
                 },
             },
         },

@@ -25,7 +25,7 @@ pub fn get_component() -> Component {
     }
 
     let dropdown_items = dropdown::DropdownItemCollection {
-        handle_on_click_method_name: "window.nemidoonam.set_language",
+        handle_on_click_method_name: "window.nemidoonam.set_target_language",
         items: &items,
     };
 

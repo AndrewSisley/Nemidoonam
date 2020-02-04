@@ -6,10 +6,16 @@ use crate::localization::{
 
 pub const LANGUAGE_COUNT: usize = 3;
 
+pub mod ids {
+    pub const ENGLISH: i32 = 1;
+    pub const FARSI: i32 = 2;
+    pub const SWEDISH: i32 = 3;
+}
+
 pub fn get() -> [Language; LANGUAGE_COUNT] {
     return [
         Language {
-            id: 1,
+            id: ids::ENGLISH,
             label_definition: LabelDefinition {
                 english: Label {
                     display_text: "English",
@@ -23,7 +29,7 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
             },
         },
         Language {
-            id: 2,
+            id: ids::FARSI,
             label_definition: LabelDefinition {
                 english: Label {
                     display_text: "Farsi",
@@ -37,7 +43,7 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
             },
         },
         Language {
-            id: 3,
+            id: ids::SWEDISH,
             label_definition: LabelDefinition {
                 english: Label {
                     display_text: "Swedish",

@@ -38,6 +38,8 @@ window.nemidoonam = {
     set_page: (id) => {
         set_page(id);
         // this should only set the relevant elements, and be done a little less explicitly perhaps
-        document.getElementById("container").innerHTML = start_app().html;
+        const app = start_app();
+        document.getElementById("component-styles").innerHTML = app.css;
+        document.getElementById("container").innerHTML = app.html;
     },
 };

@@ -35,7 +35,11 @@ pub fn get_header() -> Component {
             justify-content: flex-end;
             }}
             .language-select-spacer {{
-            padding: 0 20px 0 0;
+            margin: 0 20px 0 0;
+            padding: 0px 10px 4px 10px;
+            }}
+            .language-select-spacer:hover {{
+            background-color: lightgray;
             }}
             {display_language_selector}
             {target_language_selector}

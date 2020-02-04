@@ -1,10 +1,12 @@
 extern crate wacm;
 
+use wasm_bindgen::prelude::*;
 use wacm::Component;
 use super::display_language_selector;
 use super::nav_bar;
 use super::target_language_selector;
 use crate::localization::{ label::Label, label_definition::LabelDefinition };
+use crate::repos::{ display_language, target_language };
 
 static TITLE: LabelDefinition = LabelDefinition {
     english: Label {
@@ -33,7 +35,11 @@ pub fn get_header() -> Component {
             justify-content: flex-end;
             }}
             .language-select-spacer {{
-            padding: 0 20px 0 0;
+            margin: 0 20px 0 0;
+            padding: 0px 10px 4px 10px;
+            }}
+            .language-select-spacer:hover {{
+            background-color: lightgray;
             }}
             {display_language_selector}
             {target_language_selector}
@@ -46,7 +52,7 @@ pub fn get_header() -> Component {
             "<header>
             <div class='menu-right'>
             {display_language_selector}
-            <span class='language-select-spacer'>=></span>
+            <span class='language-select-spacer' onclick='window.nemidoonam.reverse_languages()'>=></span>
             {target_language_selector}
             </div>
             <h1>{banner}</h1>
@@ -58,4 +64,13 @@ pub fn get_header() -> Component {
             nav_bar = nav_bar.html
         ),
     }
+}
+
+#[wasm_bindgen]
+pub fn reverse_languages() {
+    let display_language_id = display_language::get();
+    let target_language_id = target_language::get();
+
+    display_language::set(target_language_id);
+    target_language::set(display_language_id);
 }

@@ -4,6 +4,7 @@ import {
     handle_target_language_selector_click,
     set_display_language,
     set_target_language,
+    reverse_languages,
     set_page
 } from 'nemidoonam';
 
@@ -32,6 +33,11 @@ window.nemidoonam = {
     },
     set_target_language: (id) => {
         set_target_language(id);
+        // this should only set the relevant elements, and be done a little less explicitly perhaps
+        document.getElementById("container").innerHTML = start_app().html;
+    },
+    reverse_languages: () => {
+        reverse_languages();
         // this should only set the relevant elements, and be done a little less explicitly perhaps
         document.getElementById("container").innerHTML = start_app().html;
     },

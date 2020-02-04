@@ -52,7 +52,7 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
                     display_text: "سوئدی",
                 },
                 swedish: Label {
-                    display_text: "Svenska   سوئدی",
+                    display_text: "سوئدی",
                 },
             },
         },

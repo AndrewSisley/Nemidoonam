@@ -40,6 +40,10 @@ pub fn get_component(display_text: &str, handle_on_click: &str, display_list_ite
             }}
             .dropdown div {{
             width: 80px;
+            padding: 0px 0 4px 10px;
+            }}
+            .dropdown div:hover {{
+            background-color: lightgray;
             }}"
         ),
         html: format!(

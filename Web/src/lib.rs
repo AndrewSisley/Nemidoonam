@@ -27,11 +27,14 @@ cfg_if! {
 pub fn start_app() -> JsValue {
     let header = core::header::get_header();
     let page = pages::page::get_current_page();
+    let shared_css = core::styles::get_shared_css();
 
     let app_model = Component {
         css: format!(
-            "{header}
+            "{shared_css}
+            {header}
             {page}",
+            shared_css = shared_css,
             header = header.css,
             page = page.css
         ),

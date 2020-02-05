@@ -31,17 +31,17 @@ window.nemidoonam = {
     set_display_language: (id) => {
         set_display_language(id);
         // this should only set the relevant elements, and be done a little less explicitly perhaps
-        document.getElementById("container").innerHTML = start_app().html;
+        refreshUI();
     },
     set_target_language: (id) => {
         set_target_language(id);
         // this should only set the relevant elements, and be done a little less explicitly perhaps
-        document.getElementById("container").innerHTML = start_app().html;
+        refreshUI();
     },
     reverse_languages: () => {
         reverse_languages();
         // this should only set the relevant elements, and be done a little less explicitly perhaps
-        document.getElementById("container").innerHTML = start_app().html;
+        refreshUI();
     },
     set_page: (id) => {
         set_page(id);

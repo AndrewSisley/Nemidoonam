@@ -37,6 +37,16 @@ pub fn get_component(display_text: &str, handle_on_click: &str, display_list_ite
             position: absolute;
             z-index: 10;
             padding-inline-start: 0px;
+            margin-block-start: 4px;
+            width: 80px;
+            }}
+            .dropdown li {{
+            padding: 0px 0 4px 10px;
+            margin: 0 0 0 -10px;
+            background-color: white;
+            }}
+            .dropdown li:hover {{
+            background-color: lightgray;
             }}
             .dropdown div {{
             width: 80px;

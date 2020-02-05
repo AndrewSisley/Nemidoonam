@@ -1,12 +1,15 @@
 use crate::learning::{ learning_item::LearningItem };
 use crate::localization::{ label::Label, label_definition::LabelDefinition };
-use crate::repos::{ target_language, available_languages::ids as languages };
+use crate::repos::{ target_language, available_languages::ids as languages, modules::Module };
 
-pub fn get() -> Vec<LearningItem> {
+pub fn get(module: Module) -> Vec<LearningItem> {
     let target_language_id = target_language::get();
 
-    return get_all()
-        .iter()
+    let items = match module {
+        Module::Alphabet => get_alphabet(),
+    };
+
+    return items.iter()
         .filter(
             |&learning_item| learning_item.target_languages
                 .iter()
@@ -33,8 +36,8 @@ pub fn get() -> Vec<LearningItem> {
         .collect()
 }
 
-fn get_all() -> [LearningItem; 43] {
-    [
+fn get_alphabet() -> Vec<LearningItem> {
+    vec![
         LearningItem {
             target_languages: vec![
                 languages::ENGLISH,

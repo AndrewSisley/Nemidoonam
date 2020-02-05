@@ -1,6 +1,6 @@
 use wacm::Component;
 use crate::localization::{ label::Label, label_definition::LabelDefinition };
-use crate::repos::{ learning_items, text_direction };
+use crate::repos::{ learning_items, text_direction, modules::Module };
 
 const TABLE_CLASS: &'static str = "alphapet-table";
 
@@ -18,7 +18,7 @@ pub static TITLE: LabelDefinition = LabelDefinition {
 
 pub fn get_page() -> Component {
     let display_text_direction = text_direction::get_display();
-    let mut learning_items = learning_items::get();
+    let mut learning_items = learning_items::get(Module::Alphabet);
 
     learning_items.sort_unstable_by(
         |a, b| a.get_target_text().partial_cmp(b.get_target_text()).unwrap()

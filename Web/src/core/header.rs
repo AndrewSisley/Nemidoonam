@@ -50,7 +50,7 @@ pub fn get_header() -> Component {
             nav_bar = nav_bar.css
         ),
         html: format!(
-            "<header class='display-text'>
+            "<header>
             <div class='menu-right'>
             {display_language_selector}
             <span class='language-select-spacer' onclick='window.nemidoonam.reverse_languages()'>=></span>

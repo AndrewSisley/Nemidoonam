@@ -5,7 +5,10 @@ pub fn get_shared_css() -> String {
     let target_text_direction = text_direction::get_target();
 
     format!(
-        "h1 {{
+        "body {{
+        direction: {display_text_direction}
+        }}
+        h1 {{
         font-size: 3em;
         }}
         h2 {{

@@ -29,7 +29,7 @@ fn get_page(page_id: i32) -> Component {
             page_content = page_content.css
         ),
         html: format!(
-            "<section class='{page_class_name}'>
+            "<section class='display-text {page_class_name}'>
             {page_content}
             </section>",
             page_class_name = PAGE_CLASS_NAME,

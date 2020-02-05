@@ -16,6 +16,7 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
     return [
         Language {
             id: ids::ENGLISH,
+            is_right_to_left: false,
             label_definition: LabelDefinition {
                 english: Label {
                     display_text: "English",
@@ -30,6 +31,7 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
         },
         Language {
             id: ids::FARSI,
+            is_right_to_left: true,
             label_definition: LabelDefinition {
                 english: Label {
                     display_text: "Farsi",
@@ -44,6 +46,7 @@ pub fn get() -> [Language; LANGUAGE_COUNT] {
         },
         Language {
             id: ids::SWEDISH,
+            is_right_to_left: false,
             label_definition: LabelDefinition {
                 english: Label {
                     display_text: "Swedish",

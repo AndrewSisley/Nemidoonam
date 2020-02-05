@@ -28,11 +28,12 @@ pub fn get_header() -> Component {
     return Component {
         css: format!(
             "header {{
-            padding: 0 0 0 100px;
+            padding: 0 100px 0 100px;
             }}
             .menu-right {{
             display: flex;
             justify-content: flex-end;
+            direction: ltr;
             }}
             .language-select-spacer {{
             margin: 0 20px 0 0;

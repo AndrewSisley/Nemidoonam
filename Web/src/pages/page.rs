@@ -22,7 +22,7 @@ fn get_page(page_id: i32) -> Component {
     Component {
         css: format!(
             ".{page_class_name} {{
-            margin: 0 0 0 100px;
+            margin: 0 100px 0 100px;
             }}
             {page_content}",
             page_class_name = PAGE_CLASS_NAME,

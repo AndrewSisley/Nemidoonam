@@ -28,11 +28,12 @@ pub fn get_header() -> Component {
     return Component {
         css: format!(
             "header {{
-            padding: 0 0 0 100px;
+            padding: 0 100px 0 100px;
             }}
             .menu-right {{
             display: flex;
             justify-content: flex-end;
+            direction: ltr;
             }}
             .language-select-spacer {{
             margin: 0 20px 0 0;
@@ -49,7 +50,7 @@ pub fn get_header() -> Component {
             nav_bar = nav_bar.css
         ),
         html: format!(
-            "<header>
+            "<header class='display-text'>
             <div class='menu-right'>
             {display_language_selector}
             <span class='language-select-spacer' onclick='window.nemidoonam.reverse_languages()'>=></span>

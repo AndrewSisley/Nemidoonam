@@ -1,5 +1,3 @@
-extern crate wacm;
-
 use wasm_bindgen::prelude::*;
 use wacm::Component;
 use super::display_language_selector;

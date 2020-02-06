@@ -1,7 +1,3 @@
-extern crate cfg_if;
-extern crate wasm_bindgen;
-extern crate wacm;
-
 use cfg_if::cfg_if;
 use wasm_bindgen::prelude::*;
 use wacm::Component;

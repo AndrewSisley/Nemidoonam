@@ -2,22 +2,18 @@ extern crate wasm_bindgen;
 
 use wasm_bindgen::prelude::*;
 use wacm::Component;
-use super::{ home, alphabet };
-use crate::repos;
+use crate::repos::{ current_page, pages };
+
+pub trait Page<'a> {
+    fn get_title(&self) -> &'a str;
+    fn get_page(&self) -> Component;
+}
 
 const PAGE_CLASS_NAME: &'static str = "page-body";
 
 pub fn get_current_page() -> Component {
-    let current_page_id = repos::current_page::get();
-    return get_page(current_page_id);
-}
-
-fn get_page(page_id: i32) -> Component {
-    let page_content = match page_id {
-        1 => home::get_page(),
-        2 => alphabet::get_page(),
-        _ => home::get_page(),
-    };
+    let current_page_id = current_page::get();
+    let page_content = pages::get()[current_page_id as usize].get_page();
 
     Component {
         css: format!(
@@ -40,5 +36,5 @@ fn get_page(page_id: i32) -> Component {
 
 #[wasm_bindgen]
 pub fn set_page(id: i32) {
-    repos::current_page::set(id);
+    current_page::set(id);
 }

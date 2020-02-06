@@ -3,34 +3,30 @@ use crate::localization::{ label::Label, label_definition::LabelDefinition };
 use crate::pages::page::{ Page };
 use crate::repos::{ learning_items, text_direction, modules::Module };
 
-const TABLE_CLASS: &'static str = "alphapet-table";
+const TABLE_CLASS: &'static str = "prepositions-table";
 
 pub static TITLE: LabelDefinition = LabelDefinition {
     english: Label {
-        display_text: "Alphabet",
+        display_text: "Prepositions",
     },
     farsi: Label {
-        display_text: "الفبا",
+        display_text: "حروف اضافه",
     },
     swedish: Label {
-        display_text: "Alfabet",
+        display_text: "Prepositioner",
     },
 };
 
-pub struct Alphabet;
+pub struct Prepositions;
 
-impl<'a> Page<'a> for Alphabet {
+impl<'a> Page<'a> for Prepositions {
     fn get_title(&self) -> &'a str {
         TITLE.get_display_text()
     }
 
     fn get_page(&self) -> Component {
         let display_text_direction = text_direction::get_display();
-        let mut learning_items = learning_items::get(Module::Alphabet);
-
-        learning_items.sort_unstable_by(
-            |a, b| a.get_target_text().partial_cmp(b.get_target_text()).unwrap()
-        );
+        let learning_items = learning_items::get(Module::Prepositions);
 
         let mut learning_item_string_builder = format!("<table class='{table_class}'><tbody>", table_class = TABLE_CLASS);
 
@@ -61,11 +57,10 @@ impl<'a> Page<'a> for Alphabet {
 
         let learning_item_elements = learning_item_string_builder + "</tbody></table>";
 
-        Component {
+        return Component {
             css: format!(
                 ".{table_class} td {{
-                min-width: 80px;
-                text-align: center;
+                padding: 0 10px 0 10px;
                 font-size: 2em;
                 }}",
                 table_class = TABLE_CLASS

@@ -1,9 +1,23 @@
 extern crate wacm;
 
 use wacm::Component;
-use crate::pages::{ home, alphabet };
+use crate::repos::{ pages };
 
 pub fn get_component() -> Component {
+    let pages = pages::get();
+    let mut nav_item_string_builder = String::new();
+
+    for page_index in 0..pages.len() {
+        let page_element = format!(
+            "<a onclick='window.nemidoonam.set_page({page_id})'>{page_title}</a>",
+            page_id = page_index,
+            page_title = pages[page_index].get_title(),
+        );
+        nav_item_string_builder = format!("{}{}", nav_item_string_builder, page_element);
+    }
+
+    nav_item_string_builder.to_string();
+
     return Component {
         css: ".nav-bar-top {
         display: inline-block;
@@ -19,11 +33,9 @@ pub fn get_component() -> Component {
         }".to_string(),
         html: format!(
             "<nav class='nav-bar-top'>
-            <a onclick='window.nemidoonam.set_page(1)'>{home_title}</a>
-            <a onclick='window.nemidoonam.set_page(2)'>{alphabet_title}</a>
+            {nav_items}
             </nav>",
-            home_title = home::TITLE.get_display_text(),
-            alphabet_title = alphabet::TITLE.get_display_text()
+            nav_items = nav_item_string_builder,
         ),
     }
 }

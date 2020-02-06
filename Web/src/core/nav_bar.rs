@@ -1,5 +1,3 @@
-extern crate wacm;
-
 use wacm::Component;
 use crate::repos::{ pages };
 

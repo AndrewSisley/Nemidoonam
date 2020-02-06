@@ -1,6 +1,3 @@
-extern crate wacm;
-extern crate wasm_bindgen;
-
 use wasm_bindgen::prelude::*;
 use std::sync::atomic::{AtomicBool, Ordering};
 use wacm::Component;

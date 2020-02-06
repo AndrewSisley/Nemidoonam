@@ -12,13 +12,12 @@ pub fn get_component() -> Component {
 
     let mut items: [dropdown::DropdownItem; available_languages::LANGUAGE_COUNT] = Default::default();
 
-    let mut i: usize = 0;
-    for available_language in &available_languages {
-        items[i] = dropdown::DropdownItem {
+    for index in 0..available_languages.len() {
+        let available_language = &available_languages[index];
+        items[index] = dropdown::DropdownItem {
             id: available_language.id,
             display_text: available_language.get_display_text(),
         };
-        i = i + 1;
     }
 
     let dropdown_items = dropdown::DropdownItemCollection {

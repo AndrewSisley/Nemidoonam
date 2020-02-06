@@ -7,6 +7,7 @@ pub fn get(module: Module) -> Vec<LearningItem> {
 
     let items = match module {
         Module::Alphabet => get_alphabet(),
+        Module::Prepositions => get_prepositions(),
     };
 
     return items.iter()
@@ -770,5 +771,11 @@ fn get_alphabet() -> Vec<LearningItem> {
                 },
             },
         },
+    ]
+}
+
+fn get_prepositions() -> Vec<LearningItem> {
+    vec![
+
     ]
 }

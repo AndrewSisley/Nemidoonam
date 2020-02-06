@@ -776,6 +776,149 @@ fn get_alphabet() -> Vec<LearningItem> {
 
 fn get_prepositions() -> Vec<LearningItem> {
     vec![
-
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "where?",
+                },
+                farsi: Label {
+                    display_text: "کجا؟",
+                },
+                swedish: Label {
+                    display_text: "var?",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "here",
+                },
+                farsi: Label {
+                    display_text: "اینکا",
+                },
+                swedish: Label {
+                    display_text: "här",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "there",
+                },
+                farsi: Label {
+                    display_text: "انکا",
+                },
+                swedish: Label {
+                    display_text: "där",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "behind",
+                },
+                farsi: Label {
+                    display_text: "پشت",
+                },
+                swedish: Label {
+                    display_text: "bakom",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "in front of",
+                },
+                farsi: Label {
+                    display_text: "جلو ",
+                },
+                swedish: Label {
+                    display_text: "framför",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "beside/next to",
+                },
+                farsi: Label {
+                    display_text: "کنار",
+                },
+                swedish: Label {
+                    display_text: "bredvid",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "on",
+                },
+                farsi: Label {
+                    display_text: "روی",
+                },
+                swedish: Label {
+                    display_text: "på",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "under",
+                },
+                farsi: Label {
+                    display_text: "زیر",
+                },
+                swedish: Label {
+                    display_text: "under",
+                },
+            },
+        },
     ]
 }

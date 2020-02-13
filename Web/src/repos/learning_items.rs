@@ -926,6 +926,167 @@ fn get_prepositions() -> Vec<LearningItem> {
 
 fn get_the_home() -> Vec<LearningItem> {
     vec![
-
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "home",
+                },
+                farsi: Label {
+                    display_text: "خانه",
+                },
+                swedish: Label {
+                    display_text: "hem",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "furniture",
+                },
+                farsi: Label {
+                    display_text: "لوازم خانه",
+                },
+                swedish: Label {
+                    display_text: "möbel",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "table",
+                },
+                farsi: Label {
+                    display_text: "میز",
+                },
+                swedish: Label {
+                    display_text: "table",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "chair",
+                },
+                farsi: Label {
+                    display_text: "صندلی",
+                },
+                swedish: Label {
+                    display_text: "stol",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "sofa",
+                },
+                farsi: Label {
+                    display_text: "مبل",
+                },
+                swedish: Label {
+                    display_text: "sofa",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "bed",
+                },
+                farsi: Label {
+                    display_text: "تخت",
+                },
+                swedish: Label {
+                    display_text: "säng",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "shower",
+                },
+                farsi: Label {
+                    display_text: "دوش",
+                },
+                swedish: Label {
+                    display_text: "dusch",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "bath",
+                },
+                farsi: Label {
+                    display_text: "حمام",
+                },
+                swedish: Label {
+                    display_text: "bad",
+                },
+            },
+        },
+        LearningItem {
+            target_languages: vec![
+                languages::ENGLISH,
+                languages::FARSI,
+                languages::SWEDISH,
+            ],
+            label_definition: LabelDefinition {
+                english: Label {
+                    display_text: "fridge",
+                },
+                farsi: Label {
+                    display_text: "یخچال",
+                },
+                swedish: Label {
+                    display_text: "kylskåp",
+                },
+            },
+        },
     ]
 }
